@@ -1,0 +1,23 @@
+.form__input {
+  padding: 0;
+  padding-bottom: 13px;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  align-self: flex-start;
+  background-color: transparent;
+}
+
+.form__input::placeholder {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.form__input:focus {
+  outline: none;
+}

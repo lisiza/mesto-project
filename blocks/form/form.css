@@ -1,0 +1,17 @@
+.form {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+  border: none;
+  width: 358px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 628px) {
+  .form {
+    max-width: 282px;
+  }
+}
