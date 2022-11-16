@@ -6,13 +6,8 @@
   padding-inline-start: 0;
   padding-inline-end: 0;
   padding-block-end: 0;
+  padding: 0;
   min-inline-size: min-content;
   border: none;
   width: 100%;
-}
-
-@media screen and (max-width: 628px) {
-  .form {
-    max-width: 238px;
-  }
 }
