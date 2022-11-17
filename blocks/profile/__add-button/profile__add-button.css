@@ -4,8 +4,10 @@
   width: 150px;
   box-sizing: border-box;
   border: 1px solid #FFFFFF;
+  border-radius: 2px;
   background-color: transparent;
-  background-image: url(../../../images/add-button.png);
+  background-image: url(../../../images/add-button.svg);
+  background-size: 22px;
   background-repeat: no-repeat;
   background-position: center;
   justify-self: end;
@@ -22,5 +24,6 @@
     width: 282px;
     margin-top: 36px;
     justify-self: center;
+    background-size: 16px;
   }
 }

@@ -1,5 +1,4 @@
 .form__input-container {
-  display: block;
   margin-inline-start: 0;
   margin-inline-end: 0;
   padding-block-start: 0;
@@ -10,4 +9,7 @@
   min-inline-size: min-content;
   border: none;
   width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 30px;
 }

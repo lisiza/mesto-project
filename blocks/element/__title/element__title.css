@@ -9,4 +9,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin: 25px auto 32px 21px;
+  max-width: 188px;
 }

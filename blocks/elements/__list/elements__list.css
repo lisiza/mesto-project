@@ -13,13 +13,11 @@
 @media screen and (max-width: 880px) {
   .elements__list {
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
   }
 }
 
 @media screen and (max-width: 628px) {
   .elements__list {
     grid-template-columns: 1fr;
-    justify-items: center;
   }
 }

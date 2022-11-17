@@ -11,34 +11,18 @@
       <link rel="stylesheet" href="./pages/index.css">
   </head>
   <body class="page">
-    <section class="popup popup_opened">
-      <div class="popup__container">
-        <button class="popup__close-button"></button>
-        <form class="form">
-          <h2 class="form__heading">Редактировать профиль</h2>
-          <fieldset class="form__input-container">
-            <label for="name" class="form__label"></label>
-            <input type="text" class="form__input form__input_el_name" id="name" name="name" placeholder="Жак-Ив Кусто">
-            <label for="caption" class="form__label"></label>
-            <input type="text" class="form__input form__input_el_caption" id="caption" name="caption" placeholder="Исследователь океана">
-          </fieldset>
-          <input type="submit" class="form__button" value="Сохранить">
-        </form>
-      </div>
-    </section>
       <header class="header">
-          <img class="header__logo" src="./images/header-logo.png" alt="Логотип Mesto.">
-          <hr class="header__line">
+          <img class="header__logo" src="./images/header-logo.svg" alt="Логотип Mesto.">
       </header>
       <main>
           <section class="profile">
             <div class="profile__avatar"></div>
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
+              <button class="profile__edit-button" type="button"></button>
               <p class="profile__caption">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="button"></button>
           </section>
           <section class="elements" aria-label="Фотографии, размещенные пользователем.">
             <ul class="elements__list">
@@ -47,7 +31,7 @@
                   <img class="element__image" alt="Собор Дуомо." src="./images/duomo.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Собор Дуомо</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -56,7 +40,7 @@
                   <img class="element__image" alt="Мост Санта-Мария Тринита." src="./images/ponte-santa-trinita.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Мост Санта-Мария Тринита</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -65,7 +49,7 @@
                   <img class="element__image" alt="Флорентийское аббатство." src="./images/badia-fiorentina.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Флорентийское аббатство</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -74,7 +58,7 @@
                   <img class="element__image" alt="Мост Понте Веккьо." src="./images/ponte-vecchio.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Собор Дуомо</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -83,7 +67,7 @@
                   <img class="element__image" alt="Улица в центре Флоренции" src="./images/strada.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Узкая улица</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -92,7 +76,7 @@
                   <img class="element__image" alt="Площадь в центре Флоренци" src="./images/piazza.jpg">
                   <div class="element__caption">
                     <h2 class="element__title">Старая площадь</h2>
-                    <button class="element__like-button"></button>
+                    <button class="element__like-button" type="button"></button>
                   </div>
                 </article>
               </li>
@@ -102,5 +86,18 @@
       <footer class="footer">
         <p class="footer__copyright" lang="en">&copy;&nbsp;2022 Mesto Russia</p>
       </footer>
+      <div class="popup popup_opened">
+        <div class="popup__container">
+          <button class="popup__close-button" type="button"></button>
+          <form class="form" name="profile_edit">
+            <h2 class="form__heading">Редактировать профиль</h2>
+            <fieldset class="form__input-container">
+              <input type="text" class="form__input form__input_el_name" id="name" name="name" placeholder="Жак-Ив Кусто" required>
+              <input type="text" class="form__input form__input_el_caption" id="caption" name="caption" placeholder="Исследователь океана">
+            </fieldset>
+            <input type="submit" class="form__button" value="Сохранить">
+          </form>
+        </div>
+      </div>
   </body>
 </html>
