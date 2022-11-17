@@ -8,9 +8,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  align-self: center;
   transition: 0.5s;
   cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  align-self: center;
 }
 
 .element__like-button:hover {

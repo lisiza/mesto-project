@@ -9,6 +9,9 @@
   background-position: center;
   transition: 0.5s;
   cursor: pointer;
+  position: absolute;
+  right: -42px;
+  top: 15px;
 }
 
 .profile__edit-button:hover {
@@ -19,5 +22,14 @@
   .profile__edit-button {
     height: 18px;
     width: 18px;
+    right: -27px;
+    top: 9px;
+  }
+}
+
+@media screen and (max-width: 628px) {
+  .profile__edit-button {
+    right: -27px;
+    top: 34px;
   }
 }
