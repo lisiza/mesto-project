@@ -7,5 +7,6 @@
   top: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
-  /* opacity, перестань наследоваться */
+  flex-direction: column;
+  justify-content: center;
 }
