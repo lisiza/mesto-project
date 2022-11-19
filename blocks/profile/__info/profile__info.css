@@ -1,15 +1,24 @@
 .profile__info {
   padding-left: 30px;
   display: grid;
-  grid-auto-flow: row;
-  row-gap: 13px;
+  grid-template-columns: 400px auto;
   align-items: baseline;
   max-width: 480px;
   position: relative;
 }
 
+@media screen and (max-width: 880px) {
+  .profile__info {
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+  }
+}
+
 @media screen and (max-width: 628px) {
   .profile__info {
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+    row-gap: 13px;
     padding-top: 26px;
     padding-left: 0;
   }
