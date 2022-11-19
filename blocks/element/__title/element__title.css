@@ -1,4 +1,5 @@
 .element__title {
+  display: block;
   font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -9,6 +10,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin: 25px auto 31px 21px;
+  margin: 22px auto 29px 21px;
   max-width: 188px;
 }

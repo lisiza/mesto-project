@@ -9,6 +9,8 @@
   background-position: center;
   transition: 0.5s;
   cursor: pointer;
+  align-self: center;
+  justify-self: end;
 }
 
 .profile__edit-button:hover {

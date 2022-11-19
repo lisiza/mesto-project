@@ -1,7 +1,7 @@
 .profile__info {
   padding-left: 30px;
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 294px 42px;
   align-items: baseline;
   max-width: 480px;
   position: relative;
