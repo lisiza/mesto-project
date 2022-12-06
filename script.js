@@ -58,7 +58,7 @@ profileEditButton.addEventListener('click', () => {
   inputJob.placeholder = currentJob.textContent; //вписываем в плейсхолдер текущую профессию
 });
 
-//закрываем попап с редактированием профиля по кнопке
+//закрываем попап с редактированием профиля по кнопке "закрыть"
 popupEditProfileCloseButton.addEventListener('click', () => profileEditPopup.classList.remove('popup-edit-profile_opened'));
 
 //сохраняем новые данные из попапа с редактированием профиля
@@ -109,7 +109,7 @@ function createElement (image, title) {
 //открываем попап c добавлением фоточки
 addElementButton.addEventListener('click', () => imageAddPopup.classList.add('popup-add-image_opened'));
 
-//закрываем попап с добавлением фоточки по кнопке
+//закрываем попап с добавлением фоточки по кнопке "закрыть"
 popupAddImageCloseButton.addEventListener('click', () => imageAddPopup.classList.remove('popup-add-image_opened'));
 
 //добавляем новую фоточку через попап
