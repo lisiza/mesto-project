@@ -26,70 +26,16 @@
           </section>
           <section class="elements" aria-label="Фотографии, размещенные пользователем.">
             <ul class="elements__list">
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Собор Дуомо." src="./images/duomo.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Собор Дуомо</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Мост Санта-Мария Тринита." src="./images/ponte-santa-trinita.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Мост Санта-Мария Тринита</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Флорентийское аббатство." src="./images/badia-fiorentina.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Флорентийское аббатство</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Мост Понте Веккьо." src="./images/ponte-vecchio.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Понте Веккьо</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Улица в центре Флоренции" src="./images/strada.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Узкая улица</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="element">
-                  <img class="element__image" alt="Площадь в центре Флоренци" src="./images/piazza.jpg">
-                  <div class="element__caption">
-                    <h2 class="element__title">Старая площадь</h2>
-                    <button class="element__like-button" type="button" aria-label="нравится"></button>
-                  </div>
-                </article>
-              </li>
             </ul>
           </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright" lang="en">&copy;&nbsp;2022 Mesto Russia</p>
       </footer>
-      <div class="popup popup_opened">
-        <div class="popup__container">
-          <button class="popup__close-button" type="button" aria-label="закрыть"></button>
-          <form class="form" name="profile_edit">
+      <div class="popup-edit-profile">
+        <div class="popup-edit-profile__container">
+          <button class="popup-edit-profile__close-button" type="button" aria-label="закрыть"></button>
+          <form class="form" name="profile_edit" id="profile-edit-form">
             <h2 class="form__heading">Редактировать профиль</h2>
             <fieldset class="form__input-container">
               <input type="text" class="form__input form__input_el_name" id="name" name="name" placeholder="Жак-Ив Кусто" required>
@@ -99,5 +45,38 @@
           </form>
         </div>
       </div>
+      <div class="popup-view-image">
+        <div class="popup-view-image__container">
+          <button class="popup-view-image__close-button" type="button" aria-label="закрыть"></button>
+          <img class="popup-view-image__image" alt="" src="">
+          <h2 class="popup-view-image__title"></h2>
+        </div>
+      </div>
+      <div class="popup-add-image">
+        <div class="popup-add-image__container">
+          <button class="popup-add-image__close-button" type="button" aria-label="закрыть"></button>
+          <form class="form" name="image-add" id="image-add-form">
+            <h2 class="form__heading">Новое место</h2>
+            <fieldset class="form__input-container">
+              <input type="text" class="form__input form__input_el_name" id="name" name="name" placeholder="Название" required>
+              <input type="text" class="form__input form__input_el_caption" id="caption" name="caption" placeholder="Ссылка на картинку">
+            </fieldset>
+            <input type="submit" class="form__button" value="Создать">
+          </form>
+        </div>
+      </div>
+    <template id="element-template">
+      <li>
+        <article class="element">
+          <img class="element__image" alt="" src="">
+          <button class="element__trash-button" type="button" aria-label="удалить"></button>
+          <div class="element__caption">
+            <h2 class="element__title"></h2>
+            <button class="element__like-button" type="button" aria-label="нравится"></button>
+          </div>
+        </article>
+      </li>
+    </template>
+    <script src="script.js"></script>
   </body>
 </html>
