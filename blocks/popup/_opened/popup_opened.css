@@ -1,4 +1,4 @@
-.popup-edit-profile_opened {
+.popup_opened {
   opacity: 1;
   visibility: visible;
   transition: opacity 1s, visibility 0s;

@@ -1,4 +1,4 @@
-.popup-edit-profile {
+.popup_add-image {
   min-width: 100%;
   min-height: 100%;
   position: fixed;
@@ -8,7 +8,4 @@
   flex-direction: column;
   justify-content: center;
   display: flex;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s, visibility 0s 1s;
 }
