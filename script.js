@@ -16,6 +16,9 @@ const elementsList = document.querySelector('.elements__list');
 const elementForm = document.getElementById('image-add-form');
 const inputPlaceName = elementForm.querySelector('.form__input_el_name');
 const inputPlaceImage = elementForm.querySelector('.form__input_el_caption');
+const like = document.querySelector('.element__like-button');
+const iconToTrash = document.querySelector('.element__trash-button');
+
 
 function openPopup (element) {
   element.classList.add('popup_opened');
@@ -59,6 +62,12 @@ function toggleLike (element) {
   element.classList.toggle('element__like-button_active');
 }
 
+function openImage (image, title) {
+  popupViewImageImage.src = image;
+  popupViewImageTitle.textContent = title;
+  openPopup(popupViewImage);
+}
+
 function createElement (image, title) {
   const newElement = elementTemplate.content.cloneNode(true);
   const elementImage = newElement.querySelector('.element__image');
@@ -66,26 +75,34 @@ function createElement (image, title) {
 
   elementImage.src = image;
   elementTitle.textContent = title;
+
   elementImage.setAttribute('alt', "Фото, добавленное пользователем: " + title);
-
-  const like = newElement.querySelector('.element__like-button');
-  like.addEventListener('click', () => toggleLike(like));
-
-  const iconToTrash = newElement.querySelector('.element__trash-button');
-  iconToTrash.addEventListener('click', () => {
-    elementToTrash = iconToTrash.closest('li');
-    moveToTrash(elementToTrash);
-  })
-
-  elementImage.addEventListener('click', () => {
-    popupViewImageImage.src = elementImage.src;
-    popupViewImageTitle.textContent = elementTitle.textContent;
-    openPopup(popupViewImage);
-  });
+  elementImage.setAttribute('title', title);
 
   return newElement
 };
 
+
+elementsList.addEventListener('click', function(evt) {
+  if (evt.target.classList.contains('element__like-button')) {
+    toggleLike(evt.target);
+  }
+})
+
+elementsList.addEventListener('click', function(evt) {
+  if (evt.target.classList.contains('element__trash-button')) {
+    elementToTrash = evt.target.closest('li');
+    moveToTrash(elementToTrash);
+  }
+})
+
+elementsList.addEventListener('click', function(evt) {
+  if (evt.target.classList.contains('element__image')) {
+    const image = evt.target.src;
+    const title = evt.target.title;
+    openImage(image, title);
+  }
+})
 
 buttonOpenProfilePopup.addEventListener('click', () => {
   inputName.value = currentName.textContent;
