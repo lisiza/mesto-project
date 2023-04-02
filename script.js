@@ -22,11 +22,16 @@ const iconToTrash = document.querySelector('.element__trash-button');
 
 function openPopup (element) {
   element.classList.add('popup_opened');
-}
 
-function closePopup () {
-  const popupOpened = document.querySelector('.popup_opened');
-  popupOpened.classList.remove('popup_opened');
+  //не придумала как правильнее, добавлять слушатель события при открытии попапа или как отдельный модуль
+  document.addEventListener('keydown', function(evt) {
+    if (evt.key == 'Escape') {
+      closePopup(element);
+    }
+  })}
+
+function closePopup (popup) {
+  popup.classList.remove('popup_opened');
 }
 
 function resetForm (element) {
@@ -104,6 +109,12 @@ elementsList.addEventListener('click', function(evt) {
   }
 })
 
+document.addEventListener('click', function(evt) {
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
+  }
+})
+
 buttonOpenProfilePopup.addEventListener('click', () => {
   inputName.value = currentName.textContent;
   inputJob.value = currentJob.textContent;
@@ -122,6 +133,7 @@ buttonsClosePopup.forEach(buttonClosePopup =>
     const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }));
+
 
 
 formEditProfile.addEventListener('submit', (evt) => submitformEditProfile(evt));
