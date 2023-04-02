@@ -22,15 +22,24 @@ const iconToTrash = document.querySelector('.element__trash-button');
 
 function openPopup (element) {
   element.classList.add('popup_opened');
-
-  //не придумала как правильнее, добавлять слушатель события при открытии попапа или как отдельный модуль
-  document.addEventListener('keydown', function(evt) {
-    if (evt.key == 'Escape') {
-      closePopup(element);
+  document.addEventListener('keydown', (evt) => closePopupByEsc(evt))
+  document.addEventListener('click', function(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup();
     }
-  })}
+  })
+}
 
-function closePopup (popup) {
+
+function closePopupByEsc(evt) {
+  if (evt.key == 'Escape') {
+    closePopup();
+    document.removeEventListener('keydown', (evt) => closePopupByEsc(evt))
+  }
+}
+
+function closePopup () {
+  popup = document.querySelector('.popup_opened')
   popup.classList.remove('popup_opened');
 }
 
@@ -40,6 +49,7 @@ function resetForm (element) {
 }
 
 function submitformEditProfile (evt) {
+  console.log(evt.target)
   evt.preventDefault();
   currentName.textContent = inputName.value;
   currentJob.textContent = inputJob.value;
@@ -109,11 +119,6 @@ elementsList.addEventListener('click', function(evt) {
   }
 })
 
-document.addEventListener('click', function(evt) {
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup(evt.target);
-  }
-})
 
 buttonOpenProfilePopup.addEventListener('click', () => {
   inputName.value = currentName.textContent;
@@ -141,3 +146,47 @@ elementForm.addEventListener('submit', (evt) => submitElementForm(evt));
 
 
 addElements(initialCards);
+
+
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add('form__input_error');
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add('form__input_error_active');
+};
+
+const hideInputError = (formElement, inputElement) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove('form__input_error');
+  errorElement.classList.remove('form__input_error_active');
+  errorElement.textContent = '';
+};
+
+const checkInputValidity = (formElement, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+};
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll('.form__input'));
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function () {
+      checkInputValidity(formElement, inputElement);
+    });
+  });
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll('.form'));
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+    });
+  setEventListeners(formElement);
+  });
+};
+
+enableValidation();
