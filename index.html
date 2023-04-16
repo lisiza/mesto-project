@@ -35,13 +35,31 @@
       <div class="popup popup_edit-profile">
         <div class="popup__container">
           <button class="popup__close-button" type="button" aria-label="закрыть"></button>
-          <form class="form" name="profile_edit" id="profile-edit-form">
+          <form class="form" name="profile_edit" id="profile-edit-form" novalidate>
             <h2 class="form__heading">Редактировать профиль</h2>
             <fieldset class="form__input-container">
-              <input type="text" class="form__input form__input_el_name" id="name" name="name" required>
-              <span class="form__input_error"></span>
-              <input type="text" class="form__input form__input_el_caption" id="caption" name="caption" required>
-              <span class="form__input_error"></span>
+              <input
+                type="text"
+                class="form__input form__input_el_name"
+                id="name-input"
+                name="name"
+                minlength="2"
+                maxlength="40"
+                pattern="[\s\-a-zA-Zа-яА-ЯёЁ]+"
+                data-error-message="Поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+                required>
+              <span class="form__input_error name-input-error"></span>
+              <input
+                type="text"
+                class="form__input form__input_el_caption"
+                id="caption-input"
+                name="caption"
+                minlength="2"
+                maxlength="200"
+                pattern="[\s\-a-zA-Zа-яА-ЯёЁ]+"
+                data-error-message="Поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+                required>
+              <span class="form__input_error caption-input-error"></span>
             </fieldset>
             <input type="submit" class="form__button" value="Сохранить">
           </form>
@@ -57,13 +75,32 @@
       <div class="popup popup_add-image">
         <div class="popup__container">
           <button class="popup__close-button" type="button" aria-label="закрыть"></button>
-          <form class="form" name="image-add" id="image-add-form">
+          <form class="form" name="image-add" id="image-add-form" novalidate>
             <h2 class="form__heading">Новое место</h2>
             <fieldset class="form__input-container">
-              <input type="text" class="form__input form__input_el_name" id="name" name="name" placeholder="Название" required>
-              <span class="form__input_error"></span>
-              <input type="text" class="form__input form__input_el_caption" id="caption" name="caption" placeholder="Ссылка на картинку" required>
-              <span class="form__input_error"></span>
+              <input
+                class="form__input form__input_el_name"
+                id="name-input"
+                name="name"
+                placeholder="Название"
+                type="text"
+                minlength="2"
+                maxlength="30"
+                pattern="[\s\-a-zA-Zа-яА-ЯёЁ]+"
+                data-error-message="Поле может содержать латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+                required>
+              <span class="form__input_error name-input-error"></span>
+              <input
+                type="text"
+                class="form__input form__input_el_caption"
+                id="caption-input"
+                name="caption"
+                placeholder="Ссылка на картинку"
+                type="url"
+                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=а-яА-ЯёЁ]{1,256}\.[a-zA-Z0-9()а-яА-ЯёЁ]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&=а-яА-ЯёЁ]*)"
+                data-error-message="Здесь должен быть URL"
+                required>
+              <span class="form__input_error caption-input-error"></span>
             </fieldset>
             <input type="submit" class="form__button" value="Создать">
           </form>
