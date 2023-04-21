@@ -97,7 +97,7 @@
                 name="caption"
                 placeholder="Ссылка на картинку"
                 type="url"
-                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=а-яА-ЯёЁ]{1,256}\.[a-zA-Z0-9()а-яА-ЯёЁ]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&=а-яА-ЯёЁ]*)"
+                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=а-яА-ЯёЁ]{1,256}\.[a-zA-Z0-9()а-яА-ЯёЁ]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=а-яА-ЯёЁ]*)"
                 data-error-message="Здесь должен быть URL"
                 required>
               <span class="form__input_error caption-input-error"></span>
@@ -118,7 +118,8 @@
         </article>
       </li>
     </template>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="data.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="./src/components/index.js"></script>
   </body>
 </html>
